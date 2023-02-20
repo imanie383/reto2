@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="plate_1_1" model="nao.menu.plate">
+        <field name="name">Entrada Becario</field>
+        <field name="category_id" ref="nao.categ_1"/>
+        <field name="level_id" ref="nao.level_1"/>
+    </record>
+    <record id="plate_1_2" model="nao.menu.plate">
+        <field name="name">Plato Fuerte Becario</field>
+        <field name="category_id" ref="nao.categ_2"/>
+        <field name="level_id" ref="nao.level_1"/>
+    </record>
+    <record id="plate_1_3" model="nao.menu.plate">
+        <field name="name">Postre Becario</field>
+        <field name="category_id" ref="nao.categ_3"/>
+        <field name="level_id" ref="nao.level_1"/>
+    </record>
+    <record id="plate_1_4" model="nao.menu.plate">
+        <field name="name">Bebida Becario</field>
+        <field name="category_id" ref="nao.categ_4"/>
+        <field name="level_id" ref="nao.level_1"/>
+    </record>
+
+    <record id="plate_2_1" model="nao.menu.plate">
+        <field name="name">Entrada Empleado</field>
+        <field name="category_id" ref="nao.categ_1"/>
+        <field name="level_id" ref="nao.level_2"/>
+    </record>
+    <record id="plate_2_2" model="nao.menu.plate">
+        <field name="name">Plato Fuerte Empleado</field>
+        <field name="category_id" ref="nao.categ_2"/>
+        <field name="level_id" ref="nao.level_2"/>
+    </record>
+    <record id="plate_2_3" model="nao.menu.plate">
+        <field name="name">Postre Empleado</field>
+        <field name="category_id" ref="nao.categ_3"/>
+        <field name="level_id" ref="nao.level_2"/>
+    </record>
+    <record id="plate_2_4" model="nao.menu.plate">
+        <field name="name">Bebida Empleado</field>
+        <field name="category_id" ref="nao.categ_4"/>
+        <field name="level_id" ref="nao.level_2"/>
+    </record>
+
+    <record id="plate_3_1" model="nao.menu.plate">
+        <field name="name">Entrada Gerente</field>
+        <field name="category_id" ref="nao.categ_1"/>
+    </record>
+    <record id="plate_3_2" model="nao.menu.plate">
+        <field name="name">Plato Fuerte Gerente</field>
+        <field name="category_id" ref="nao.categ_2"/>
+        <field name="level_id" ref="nao.level_3"/>
+    </record>
+    <record id="plate_3_3" model="nao.menu.plate">
+        <field name="name">Postre Gerente</field>
+        <field name="category_id" ref="nao.categ_3"/>
+        <field name="level_id" ref="nao.level_3"/>
+    </record>
+    <record id="plate_3_4" model="nao.menu.plate">
+        <field name="name">Bebida Gerente</field>
+        <field name="category_id" ref="nao.categ_4"/>
+        <field name="level_id" ref="nao.level_3"/>
+    </record>
+</odoo>

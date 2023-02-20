@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="categ_1" model="nao.menu.category">
+        <field name="name">Entrada</field>
+    </record>
+    <record id="categ_2" model="nao.menu.category">
+        <field name="name">Plato Fuerte</field>
+    </record>
+    <record id="categ_3" model="nao.menu.category">
+        <field name="name">Postre</field>
+    </record>
+    <record id="categ_4" model="nao.menu.category">
+        <field name="name">Bebida</field>
+    </record>
+</odoo>

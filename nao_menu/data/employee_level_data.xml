@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="level_1" model="nao.employee.level">
+        <field name="name">Becario</field>
+    </record>
+    <record id="level_2" model="nao.employee.level">
+        <field name="name">Empleado</field>
+    </record>
+    <record id="level_3" model="nao.employee.level">
+        <field name="name">Gerente</field>
+    </record>
+</odoo>
