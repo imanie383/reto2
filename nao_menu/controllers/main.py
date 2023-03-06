@@ -5,20 +5,20 @@ from odoo import http, fields, _
 from odoo.exceptions import AccessError, MissingError
 from odoo.http import request
 
-from pushbullet import PushBullet
-from pywebio.input import *
-from pywebio.output import *
-from pywebio.session import *
+# from pushbullet import PushBullet
+# from pywebio.input import *
+# from pywebio.output import *
+# from pywebio.session import *
 import time
 
 
-class MenuController(odoo.http.Controller):
+class MenuController(http.Controller):
 
     # ------------------------------------------------------------
     # My Invoices
     # ------------------------------------------------------------
 
-    @http.route(['/employee/<model("nao.employee"):employee/menu'], type='json', auth="public", methods=['GET'], website=True)
+    @http.route(['/employee/<model("nao.employee"):employee>/menu'], type='json', auth="public", methods=['GET'], website=True)
     def employee_get_menu(self, employee, **kw):
         today = fields.Date.today()
         now = fields.datetime.now()
@@ -42,9 +42,9 @@ class MenuController(odoo.http.Controller):
         }
 
 
-    @http.route(['/employee/<model("nao.employee"):employee/menu'], type='json', auth="public", methods=['POST'], website=True)
-    def employee_get_menu(self, employee, plates, **kw):
-       if not plates:
+    @http.route(['/employee/<model("nao.employee"):employee>/menu'], type='json', auth="public", methods=['POST'], website=True)
+    def employee_set_menu(self, employee, plates, **kw):
+        if not plates:
             return {
                 'message': "No existen platillos para registrar",
                 'success': False,
@@ -63,6 +63,32 @@ class MenuController(odoo.http.Controller):
             'message': message,
             'success': True,
         }
+
+    @http.route(['/test'], type='http', auth="public", website=True)
+    def test(self, **kw):
+        url = 'http://localhost:8064'
+        db = 'nao_14'
+        username = 'admin'
+        password = 'admin'
+
+        import xmlrpc.client
+        common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
+        uid = common.authenticate(db, username, password, {})
+
+        models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
+        empleado = models.execute_kw(db, uid, password, 'nao.employee', 'search_read', [[['code', '=', '111']]], {'fields': ['name', 'level_id']})
+
+        if not empleado:
+            return False
+
+        empleado = empleado[0]
+        
+
+        platos = models.execute_kw(db, uid, password, 'nao.menu.plate', 'search_read', [[['level_id', '=', empleado['level_id'][0] ]]], {'fields': ['name', 'category_id']})
+
+        import pdb; pdb.set_trace();
+        
+    
 
     def notificacion(self, message=''):
         access_token = "o.q1QIkYnI2WUdNX3wPSiWSp"

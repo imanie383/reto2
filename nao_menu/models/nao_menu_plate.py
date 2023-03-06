@@ -8,5 +8,5 @@ class NaoMenuPlate(models.Model):
     _description = "Menu Plates"
 
     name = fields.Char(string='Platillo', required=True)
-    category_id = fields.Many2one('nao.menu.category', 'Product Category' required=True)
-    level_id = fields.Many2one('nao.employee.level', 'Level' required=True)
+    category_id = fields.Many2one('nao.menu.category', 'Product Category', required=True)
+    level_id = fields.Many2one('nao.employee.level', 'Level', required=True)

@@ -3,16 +3,16 @@
     <record id="employee_1" model="nao.employee">
         <field name="name">Becario Manuel</field>
         <field name="code">111</field>
-        <field name="level_id" ref="nao.level_1"/>
+        <field name="level_id" ref="nao_menu.level_1"/>
     </record>
     <record id="employee_2" model="nao.employee">
         <field name="name">Empleado Alberto</field>
         <field name="code">222</field>
-        <field name="level_id" ref="nao.level_2"/>
+        <field name="level_id" ref="nao_menu.level_2"/>
     </record>
     <record id="employee_3" model="nao.employee">
         <field name="name">Gerente Lozano</field>
         <field name="code">333</field>
-        <field name="level_id" ref="nao.level_3"/>
+        <field name="level_id" ref="nao_menu.level_3"/>
     </record>
 </odoo>

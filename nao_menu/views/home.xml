@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Home Page -->
+    <template id="homepage" inherit_id="website.homepage" priority='100'>
+        <xpath expr="//div[@id='wrap']" position="replace">
+            <div id="wrap" class="oe_structure oe_empty">
+                <div class="container no-bg js_reservation my-5">
+                    <!-- Title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="title-page">RESERVACIÓN</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="code" class="form-label">Número de empleado:</label>
+                                    <input type="number" class="form-control" id="code" aria-describedby="code"/>
+                                </div>
+                                <button type="button" class="btn btn-primary __check_code">Verificar</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

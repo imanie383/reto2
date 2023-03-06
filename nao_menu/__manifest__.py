@@ -15,8 +15,13 @@
     'data': [
         'data/menu_category_data.xml',
         'data/employee_level_data.xml',
-        'data/menu_plate_data.xml',
         'data/employee_data.xml',
+        'data/menu_plate_data.xml',
+
+        'views/assets.xml',
+        'views/home.xml',
+
+        "security/ir.model.access.csv",
     ],
     'application': True,
 }

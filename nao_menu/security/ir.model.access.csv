@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_permission_employee,access_permission_employee,nao_menu.model_nao_employee,,1,1,1,1
+access_permission_menu_plate,access_permission_menu_plate,nao_menu.model_nao_menu_plate,,1,1,1,1
+access_permission_menu_order,access_permission_menu_order,nao_menu.model_nao_menu_order,,1,1,1,1
+access_permission_menu_category,access_permission_menu_category,nao_menu.model_nao_menu_category,,1,1,1,1
+access_permission_employee_level,access_permission_employee_level,nao_menu.model_nao_employee_level,,1,1,1,1
+
