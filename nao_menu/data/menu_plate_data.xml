@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="plate_1_1" model="nao.menu.plate">
-        <field name="name">Entrada Becario</field>
+        <field name="name">Entrada Becario - Guacamole con chips de tortilla</field>
         <field name="category_id" ref="nao_menu.categ_1"/>
         <field name="level_id" ref="nao_menu.level_1"/>
     </record>
     <record id="plate_1_2" model="nao.menu.plate">
-        <field name="name">Plato Fuerte Becario</field>
+        <field name="name">Plato Fuerte Becario - Tacos de carne asada</field>
         <field name="category_id" ref="nao_menu.categ_2"/>
         <field name="level_id" ref="nao_menu.level_1"/>
     </record>
     <record id="plate_1_3" model="nao.menu.plate">
-        <field name="name">Postre Becario</field>
+        <field name="name">Postre Becario - Gelatina</field>
         <field name="category_id" ref="nao_menu.categ_3"/>
         <field name="level_id" ref="nao_menu.level_1"/>
     </record>
     <record id="plate_1_4" model="nao.menu.plate">
-        <field name="name">Bebida Becario</field>
+        <field name="name">Bebida Becario - Agua fresca</field>
         <field name="category_id" ref="nao_menu.categ_4"/>
         <field name="level_id" ref="nao_menu.level_1"/>
     </record>
 
     <record id="plate_2_1" model="nao.menu.plate">
-        <field name="name">Entrada Empleado</field>
+        <field name="name">Entrada Empleado - Rollitos de primavera</field>
         <field name="category_id" ref="nao_menu.categ_1"/>
         <field name="level_id" ref="nao_menu.level_2"/>
     </record>
     <record id="plate_2_2" model="nao.menu.plate">
-        <field name="name">Plato Fuerte Empleado</field>
+        <field name="name">Plato Fuerte Empleado - Pollo a la parmesana</field>
         <field name="category_id" ref="nao_menu.categ_2"/>
         <field name="level_id" ref="nao_menu.level_2"/>
     </record>
     <record id="plate_2_3" model="nao.menu.plate">
-        <field name="name">Postre Empleado</field>
+        <field name="name">Postre Empleado - Brownies</field>
         <field name="category_id" ref="nao_menu.categ_3"/>
         <field name="level_id" ref="nao_menu.level_2"/>
     </record>
     <record id="plate_2_4" model="nao.menu.plate">
-        <field name="name">Bebida Empleado</field>
+        <field name="name">Bebida Empleado - Refresco</field>
         <field name="category_id" ref="nao_menu.categ_4"/>
         <field name="level_id" ref="nao_menu.level_2"/>
     </record>
 
     <record id="plate_3_1" model="nao.menu.plate">
-        <field name="name">Entrada Gerente</field>
+        <field name="name">Entrada Gerente - Ensalada caprese</field>
         <field name="category_id" ref="nao_menu.categ_1"/>
         <field name="level_id" ref="nao_menu.level_3"/>
     </record>
     <record id="plate_3_2" model="nao.menu.plate">
-        <field name="name">Plato Fuerte Gerente</field>
+        <field name="name">Plato Fuerte Gerente - Salmón al horno con vegetales</field>
         <field name="category_id" ref="nao_menu.categ_2"/>
         <field name="level_id" ref="nao_menu.level_3"/>
     </record>
     <record id="plate_3_3" model="nao.menu.plate">
-        <field name="name">Postre Gerente</field>
+        <field name="name">Postre Gerente - Tarta de manzana</field>
         <field name="category_id" ref="nao_menu.categ_3"/>
         <field name="level_id" ref="nao_menu.level_3"/>
     </record>
     <record id="plate_3_4" model="nao.menu.plate">
-        <field name="name">Bebida Gerente</field>
+        <field name="name">Bebida Gerente - Café latte</field>
         <field name="category_id" ref="nao_menu.categ_4"/>
         <field name="level_id" ref="nao_menu.level_3"/>
     </record>

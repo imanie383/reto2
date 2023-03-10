@@ -4,24 +4,20 @@ odoo.define("nao_menu.home_donation", function (require) {
     var publicWidget = require("web.public.widget");
     // var wSaleUtils = require("website_sale.utils");
     var config = require("web.config");
-    var {_t} = require("web.core");
+    var {_t, qweb} = require("web.core");
     var Session = require('web.Session');
 
     publicWidget.registry.HomeDonations = publicWidget.Widget.extend({
         selector: ".js_reservation",
+        xmlDependencies: ["/nao_menu/static/src/xml/menu.xml"],
         events: {
             "click .__check_code": "_onClickCheckCode",
-            "click .btn-donation-type:not(.active)": "_onClickDonationType",
-            "click .btn-donation-price:not(.active)": "_onClickDonationPrice",
-            "click .btn-donation-do": "_onClickDonationDo",
-            "keypress .only_numbers": "_onlyNumbers",
-            "input .js_donation_amount": "_checkAmount",
+            "click .__set_menu": "_onClickSetMenu",
         },
 
         init: function (url, pos) {
             this._super.apply(this, arguments);
-        
-            this.connection = new Session(undefined, 'http://localhost:8064', { use_cors: false});
+            this.__user = null;
         },
 
         // --------------------------------------------------------------------------
@@ -34,6 +30,8 @@ odoo.define("nao_menu.home_donation", function (require) {
         _onClickCheckCode(ev) {
             var $currentButton = $(ev.currentTarget);
             var code = this.$('form #code').val();
+            let body = this.$('.js_menus');
+            let btton = this.$('.__check_code');
 
             if (!code.trim()) {
                 return this. do_notify('Validación', "Ingresa un codigo", false, "");
@@ -43,12 +41,47 @@ odoo.define("nao_menu.home_donation", function (require) {
                 route: "https://0kcqfphjm9.execute-api.us-east-2.amazonaws.com/Demo/usuarios",
                 params: {code},
             }).then((data) => {
-                if (data.error)
+                if (data.error){
+                    body.html("");
                     return this. do_notify('Error', data.error, false, "");
+                }
+                
+                let menus = $(qweb.render('nao_menu.menu',{
+                    platos: data.platos,
+                    employee_id: data.empleado,
+                }));
+
+                body.html(menus);
+                btton.hide();
+                this.$('.__set_menu').removeClass("d-none");
             });
+        },
+        _onClickSetMenu(ev) {
+            $(ev.currentTarget).attr('disabled', true);
+            var $menu_form = this.$(".js_menus input:checked");
+            var platos = this.getFormData($menu_form);
+            if (_.isEmpty(platos))
+                return this. do_notify('Error', "Selecciona un plato", false, "");
 
-
-
+            this._rpc({
+                route: "https://0kcqfphjm9.execute-api.us-east-2.amazonaws.com/Demo/menu",
+                // route: "/test2",
+                params: {platos},
+            }).then((data) => {
+                return this. do_notify('Existo', "Reservación de menús exitosa desde " + data.platform, false, "");
+            });
+                
+        },
+        getFormData($inputs) {
+            let indexed_array = []
+            $inputs.each(function( index ) {
+              console.log( index + ": " + $( this ).text() );
+              indexed_array.push({
+                employee_id: $( this ).data('employee_id'),
+                plate_id: $( this ).data('plate_id')
+              });
+            });
+            return indexed_array;
         },
     });
 

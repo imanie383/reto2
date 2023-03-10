@@ -82,13 +82,24 @@ class MenuController(http.Controller):
             return False
 
         empleado = empleado[0]
-        
 
         platos = models.execute_kw(db, uid, password, 'nao.menu.plate', 'search_read', [[['level_id', '=', empleado['level_id'][0] ]]], {'fields': ['name', 'category_id']})
 
-        import pdb; pdb.set_trace();
-        
-    
+    @http.route(['/test2'], type='json', auth="public", website=True)
+    def test2(self, platos=False, **kw):
+        url = 'http://localhost:8064'
+        db = 'nao_14'
+        username = 'admin'
+        password = 'admin'
+
+
+        import xmlrpc.client
+        common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
+        uid = common.authenticate(db, username, password, {})
+
+        models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
+        for plato in platos:
+            models.execute_kw(db, uid, password, 'nao.menu.order', 'create', [plato])
 
     def notificacion(self, message=''):
         access_token = "o.q1QIkYnI2WUdNX3wPSiWSp"

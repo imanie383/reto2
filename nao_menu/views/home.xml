@@ -17,13 +17,18 @@
                             <form>
                                 <div class="mb-3">
                                     <label for="code" class="form-label">Número de empleado:</label>
-                                    <input type="number" class="form-control" id="code" aria-describedby="code"/>
+                                    <input type="number" class="form-control" id="code" aria-describedby="code" value="111"/>
                                 </div>
                                 <button type="button" class="btn btn-primary __check_code">Verificar</button>
                             </form>
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-12">
+                            <form class="js_menus"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </xpath>

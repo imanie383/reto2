@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="nao_menu.menu">
+        <t t-foreach="platos" t-as="plato">
+            <div class="card my-3 p-3">
+                <h1 t-esc='plato.category_id[1]' />
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="plato" t-att-data-employee_id="employee_id" t-att-data-plate_id="plato.id" t-att-id="plato.id"/>
+                    <label class="form-check-label" t-att-for="plato.id" t-esc="plato.name"/>
+                </div>
+            </div>
+
+        </t>
+        <button t-if="platos" type="button" class="btn btn-primary __set_menu d-none">Reservar</button>
+    </t>
+</templates>
